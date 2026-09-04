@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>139.196.115.78 · 服务导航</title>
+  <style>
+    :root {
+      font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      color: #e9edf7;
+      background: #0d1119;
+      font-synthesis: none;
+      --muted: #929db1;
+      --line: rgba(255,255,255,.1);
+      --card: rgba(23,30,43,.82);
+      --blue: #73a7ff;
+      --green: #67d6a3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(63,111,194,.18), transparent 32rem),
+        radial-gradient(circle at 95% 18%, rgba(46,149,113,.12), transparent 28rem),
+        #0d1119;
+    }
+    main { width: min(1060px, calc(100% - 36px)); margin: 0 auto; padding: 56px 0 70px; }
+    header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+    .eyebrow { color: var(--green); font: 700 12px/1.2 ui-monospace, monospace; letter-spacing: .14em; }
+    h1 { margin: 10px 0 8px; font-size: clamp(30px, 5vw, 52px); letter-spacing: -.045em; }
+    header p, footer { margin: 0; color: var(--muted); line-height: 1.7; }
+    time { flex: 0 0 auto; color: var(--muted); font: 600 13px/1 ui-monospace, monospace; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      min-height: 190px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--card);
+      box-shadow: 0 18px 50px rgba(0,0,0,.18);
+      backdrop-filter: blur(12px);
+    }
+    .card.featured { border-color: rgba(115,167,255,.42); background: linear-gradient(145deg, rgba(38,62,105,.8), rgba(20,29,43,.9)); }
+    .card-top { display: flex; justify-content: space-between; gap: 12px; }
+    .port { color: var(--blue); font: 800 12px/1 ui-monospace, monospace; }
+    .status { display: inline-flex; align-items: center; gap: 6px; color: var(--green); font-size: 11px; }
+    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 12px currentColor; }
+    h2 { margin: 22px 0 7px; font-size: 18px; }
+    .card p { margin: 0 0 18px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+    a {
+      margin-top: auto;
+      min-height: 38px;
+      padding: 0 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      color: #f4f7ff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    a:hover, a:focus-visible { border-color: var(--blue); background: rgba(115,167,255,.1); outline: none; }
+    .infra { margin-top: 24px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 13px; background: rgba(18,24,34,.72); }
+    .infra h2 { margin: 0 0 12px; font-size: 14px; }
+    .infra-list { display: flex; flex-wrap: wrap; gap: 9px; }
+    .infra span { padding: 7px 9px; border-radius: 7px; background: rgba(255,255,255,.05); color: var(--muted); font: 600 11px/1 ui-monospace, monospace; }
+    footer { margin-top: 22px; font-size: 11px; }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { main { padding-top: 34px; } header { align-items: flex-start; flex-direction: column; } .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <div class="eyebrow">SERVER SERVICE INDEX</div>
+        <h1>服务导航</h1>
+        <p>139.196.115.78 上当前已登记的 Web 服务。</p>
+      </div>
+      <time id="clock" aria-live="off"></time>
+    </header>
+
+    <section class="grid" aria-label="Web 服务">
+      <article class="card featured">
+        <div class="card-top"><span class="port">:8088</span><span class="status">已启动</span></div>
+        <h2>班阵 · 高中排座</h2>
+        <p>名单、布局、规则、自动生成与多格式导出的排座工作台。</p>
+        <a href="http://139.196.115.78:8088/" target="_blank" rel="noreferrer">打开工作台 <span>↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="port">:9000</span><span class="status">已启动</span></div>
+        <h2>原神自动化工具</h2>
+        <p>Nginx 对外入口，转发至本机 9001 Node 服务。</p>
+        <a href="http://139.196.115.78:9000/" target="_blank" rel="noreferrer">打开服务 <span>↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="port">:9001</span><span class="status">已启动</span></div>
+        <h2>原神自动化 · 直连</h2>
+        <p>Node 应用原始端口，与 9000 指向同一套应用。</p>
+        <a href="http://139.196.115.78:9001/" target="_blank" rel="noreferrer">打开直连端口 <span>↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="port">:9002</span><span class="status">已启动</span></div>
+        <h2>外交部记者会模拟</h2>
+        <p>外交部例行记者会互动模拟现场。</p>
+        <a href="http://139.196.115.78:9002/" target="_blank" rel="noreferrer">打开模拟现场 <span>↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="port">:9011</span><span class="status">API</span></div>
+        <h2>Qwen 地理工作流</h2>
+        <p>工作流接口：POST /v1/workflows/run；链接打开健康检查。</p>
+        <a href="http://139.196.115.78:9011/health" target="_blank" rel="noreferrer">查看健康状态 <span>↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="port">:80</span><span class="status">Nginx</span></div>
+        <h2>公共资源入口</h2>
+        <p>Nginx 默认入口与 Seedance 静态资源服务。</p>
+        <a href="http://139.196.115.78/" target="_blank" rel="noreferrer">打开入口 <span>↗</span></a>
+      </article>
+    </section>
+
+    <section class="infra" aria-label="非 Web 端口">
+      <h2>非浏览器服务</h2>
+      <div class="infra-list">
+        <span>22 · SSH</span>
+        <span>3306 · MySQL</span>
+        <span>33060 · MySQL X Protocol</span>
+        <span>6379 · Redis（仅本机）</span>
+      </div>
+    </section>
+
+    <footer>导航页托管于 81 端口。服务状态以页面部署时的服务器监听情况为准。</footer>
+  </main>
+  <script>
+    const clock = document.querySelector('#clock');
+    const renderClock = () => {
+      clock.textContent = new Intl.DateTimeFormat('zh-CN', {
+        dateStyle: 'medium', timeStyle: 'medium', hour12: false
+      }).format(new Date());
+    };
+    renderClock();
+    setInterval(renderClock, 1000);
+  </script>
+</body>
+</html>
